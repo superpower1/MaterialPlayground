@@ -16,3 +16,8 @@
   min-width: 200px;
   background-color: blue;
 }
+
+.bar-wrapper {
+  width: 50%;
+  margin: auto;
+}
