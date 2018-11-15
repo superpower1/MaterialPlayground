@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import './_benchmark-bubble.scss';
 
 const percentageToHue= (percentage, hue0, hue1) => {
@@ -11,7 +12,8 @@ class ProgressBubble extends Component {
     const waterColor = `hsla(${percentageToHue(this.props.value / 100, 0, 120)}, 100%, 50%, .7)`;
     const textColor = `hsla(${percentageToHue(this.props.value / 100, 0, 120)}, 100%, 30%, 1)`;
 
-    const {size, fontSize} = this.props;
+    const size = this.props.size || 100;
+    const fontSize = this.props.fontSize || 35;
     const border = 5;
     const bubbleSize = {width:`${size}px`, height:`${size}px`};
     const innerSize = {width:`${size-border*2}px`, height:`${size-border*2}px`};
@@ -30,6 +32,12 @@ class ProgressBubble extends Component {
       </div>
     );
   }
+}
+
+ProgressBubble.propTypes = {
+  value: PropTypes.number.isRequired,
+  size: PropTypes.number,
+  fontSize: PropTypes.number
 }
 
 export default ProgressBubble;

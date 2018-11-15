@@ -50,8 +50,8 @@ class ControlledExpansionPanels extends React.Component {
             </div>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <BenchmarkDonut/>
-            <BenchmarkBubble/>
+            <BenchmarkDonut value={80}/>
+            <BenchmarkBubble value={80}/>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
