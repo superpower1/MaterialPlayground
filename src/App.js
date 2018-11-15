@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import Flexbox from './components/Flexbox';
 import BenchmarkBar from './components/BenchmarkBar';
+import Accordion from './components/Accordion';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           <input type="number" onChange={this.changeValue} value={this.state.value}/>
           <BenchmarkBar value={this.state.value}></BenchmarkBar>
         </div>
+        <Accordion></Accordion>
       </div>
     );
   }
