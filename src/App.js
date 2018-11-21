@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Flexbox from './components/Flexbox';
 import BenchmarkBar from './components/BenchmarkBar';
 import Accordion from './components/Accordion';
+import Table from './components/Table/Table';
 import './App.css';
 
 class App extends Component {
@@ -21,12 +22,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar></Navbar>
+        {/* <Navbar></Navbar>
         <div className="bar-wrapper">
           <input type="number" onChange={this.changeValue} value={this.state.value}/>
           <BenchmarkBar value={this.state.value}></BenchmarkBar>
         </div>
-        <Accordion></Accordion>
+        <Accordion></Accordion> */}
+        <Table/>
       </div>
     );
   }
