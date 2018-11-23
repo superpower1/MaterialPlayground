@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.3.0",
     "apexcharts": "^2.2.2",
+    "d3": "^5.7.0",
     "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
     "rc-slider": "^8.6.3",
