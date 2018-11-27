@@ -164,7 +164,11 @@ class ReactSpeedometer extends React.Component {
         // label format
         labelFormat: d3Format(PROPS.valueFormat),
         // value text string (template string)
-        currentValueText: PROPS.currentValueText
+        currentValueText: PROPS.currentValueText,
+        // value range min
+        rangeMin: PROPS.rangeMin,
+        // value range max
+        rangeMax: PROPS.rangeMax,
       }
       // END: Configurable values
 
@@ -177,6 +181,7 @@ class ReactSpeedometer extends React.Component {
         value = 0,
         svg = undefined,
         arc = undefined,
+        rangeArcs = undefined,
         scale = undefined,
         ticks = undefined,
         tickData = undefined
@@ -238,6 +243,16 @@ class ReactSpeedometer extends React.Component {
             var ratio = d * (i + 1)
             return deg2rad(config.minAngle + ratio * range)
           })
+
+        rangeArcs = d3Arc()
+          .innerRadius((r - config.ringWidth - config.ringInset)*0.8)
+          .outerRadius((r - config.ringInset)*0.8)
+          .startAngle(function() {
+            return deg2rad(-90 + (config.rangeMin - config.minValue)/(config.maxValue - config.minValue)*180)
+          })
+          .endAngle(function() {
+            return deg2rad(-90 + (config.rangeMax - config.minValue)/(config.maxValue - config.minValue)*180)
+          })
       }
 
       function centerTranslation() {
@@ -249,6 +264,7 @@ class ReactSpeedometer extends React.Component {
       }
 
       function render(newValue) {
+
         // svg = d3.select(container)
         svg = d3Select(container)
           .append("svg:svg")
@@ -275,6 +291,11 @@ class ReactSpeedometer extends React.Component {
             return config.arcColorFn(d * i)
           })
           .attr("d", arc)
+
+        arcs
+          .append("path")
+          .attr("fill", "rgba(0,0,0,0.3)")
+          .attr("d", rangeArcs)
 
         var lg = svg
           .append("g")
@@ -530,6 +551,8 @@ ReactSpeedometer.propTypes = {
   value: PropTypes.number.isRequired,
   minValue: PropTypes.number.isRequired,
   maxValue: PropTypes.number.isRequired,
+  rangeMin: PropTypes.number,
+  rangeMax: PropTypes.number,
 
   // tracks if the component should update as the whole or just animate the value
   // default will just animate the value after initialization/mounting
@@ -566,6 +589,8 @@ ReactSpeedometer.defaultProps = {
   value: 0,
   minValue: 0,
   maxValue: 1000,
+  rangeMin: 0,
+  rangeMax: 0,
 
   forceRender: false,
 

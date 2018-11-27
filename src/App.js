@@ -30,9 +30,10 @@ class App extends Component {
         </div>
         <Accordion></Accordion>
         {/* <Table/> */}
-        <Speedo value={70}
-          segments={3}
+        <Speedo value={70} rangeMin={50} rangeMax={80}
+          segments={12}
           needleColor="steelblue"
+          textColor="transparent"
           minValue={0}
           maxValue={100}/>
       </div>
