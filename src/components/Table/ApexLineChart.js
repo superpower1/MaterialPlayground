@@ -13,7 +13,7 @@ class ApexLineChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      options: {      
+      options: {
         chart: {
           id: "basic-line",
           animations: {
@@ -31,7 +31,7 @@ class ApexLineChart extends Component {
     return (
       <div>
         <Chart
-          options={this.state.options}
+          options={this.props.options || this.state.options}
           series={this.props.series}
           type="line"
           width="500"
