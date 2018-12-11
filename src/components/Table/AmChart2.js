@@ -54,7 +54,6 @@ class AmChart extends Component {
         "lineThickness": 2,
         "title": "red line",
         "useLineColorForBulletBorder": true,
-        "valueField": "value",
         "balloonText": "<span style='font-size:18px;'>value1: [[value]]</span>",
         "valueField": "value1",
         "fillAlphas": 0.5 // 0
@@ -68,7 +67,6 @@ class AmChart extends Component {
         "lineThickness": 2,
         "title": "blue line",
         "useLineColorForBulletBorder": true,
-        "valueField": "value",
         "balloonText": "<span style='font-size:18px;'>value2: [[value]]</span>",
         "valueField": "value2",
         "fillAlphas": 0.5 // 0

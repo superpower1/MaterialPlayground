@@ -8,6 +8,7 @@ import SychronizedChart from './components/Table/SychronizedChart';
 import AmChart from './components/Table/AmChart2';
 import NoDataChart from './components/Table/NoDataChart';
 import Speedo from './components/BenchmarkSpeedo';
+import Map from './components/Map/Map';
 import './App.css';
 
 class App extends Component {
@@ -34,8 +35,9 @@ class App extends Component {
         <Accordion></Accordion>
         {/* <Table/> */}
         {/* <SychronizedChart/> */}
-        <AmChart/>
-        <NoDataChart/>
+        {/* <AmChart/> */}
+        <Map/>
+        {/* <NoDataChart/> */}
         <Speedo value={70} rangeMin={50} rangeMax={80}
           segments={12}
           needleColor="steelblue"

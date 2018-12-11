@@ -7,7 +7,6 @@ class AmChart extends Component {
     const dataProvider = [{
       date: now
     }]
-    console.log(dataProvider);
     const config = {
       "type": "serial",
       "theme": "light",
