@@ -11,6 +11,8 @@ import Speedo from './components/BenchmarkSpeedo';
 import Map from './components/Map/Map';
 import './App.css';
 
+// Some comments
+
 class App extends Component {
 
   constructor(props) {
