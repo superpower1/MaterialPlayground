@@ -12,6 +12,7 @@ import Map from './components/Map/Map';
 import './App.css';
 
 // Some comments
+// Some more comments
 
 class App extends Component {
 
