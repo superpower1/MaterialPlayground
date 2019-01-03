@@ -9,10 +9,8 @@ import AmChart from './components/Table/AmChart2';
 import NoDataChart from './components/Table/NoDataChart';
 import Speedo from './components/BenchmarkSpeedo';
 import Map from './components/Map/Map';
+import Modal from './components/Modal/Modal';
 import './App.css';
-
-// Some comments
-// Some more comments
 
 class App extends Component {
 
@@ -39,8 +37,9 @@ class App extends Component {
         {/* <Table/> */}
         {/* <SychronizedChart/> */}
         {/* <AmChart/> */}
-        <Map/>
+        {/* <Map/> */}
         {/* <NoDataChart/> */}
+        <Modal></Modal>
         <Speedo value={70} rangeMin={50} rangeMax={80}
           segments={12}
           needleColor="steelblue"
